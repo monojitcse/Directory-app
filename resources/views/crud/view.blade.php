@@ -83,7 +83,7 @@
         @endforeach
         </tbody>
     </table>
-    
+
     {!! str_replace('/?', '?', $students->render()) !!}
 
 

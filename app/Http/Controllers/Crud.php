@@ -14,7 +14,7 @@ class Crud extends Controller {
     }
 
     public function view (){
-        $students = Students::all();
+        $students = Students::paginate(2);
         return view('crud/view')->with('students', $students);
     }
 
@@ -51,4 +51,5 @@ class Crud extends Controller {
         Session::flash('message', 'Students info update successfully');
         return redirect('/view');
     }
+
 }

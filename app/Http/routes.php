@@ -30,3 +30,5 @@ Route::get('/delete/{id}', 'Crud@delete');
 Route::get('/edit/{id}', 'Crud@edit');
 
 Route::post('/update-student', 'Crud@updateStudent');
+
+

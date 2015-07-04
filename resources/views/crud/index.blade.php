@@ -49,6 +49,7 @@
 </div> <!-- end jumbotron -->
 
 <div class="container">
+    {{ Session::get('message') }}
     {!! Form::open(array('url' => 'save-student')) !!}
     <div class="form-group">
         <label for="first_name">First Name</label>

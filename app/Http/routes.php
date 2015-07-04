@@ -25,3 +25,8 @@ Route::get('/view','Crud@view');
 
 
 Route::post('/save-student','Crud@saveStudent');
+
+Route::get('/delete/{id}', 'Crud@delete');
+Route::get('/edit/{id}', 'Crud@edit');
+
+Route::post('/update-student', 'Crud@updateStudent');

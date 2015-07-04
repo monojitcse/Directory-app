@@ -15,13 +15,6 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <script>
-        function check () {
-            return confirm('Are you sure you want to delte this entry');
-        }
-    </script>
-
 </head>
 <body>
 
@@ -50,38 +43,36 @@
 </nav>
 <div class="jumbotron">
     <div class="container">
-        <h1>Crud System :: VIEW</h1>
+        <h1>Crud System :: EDIT</h1>
         <h3>Basic Crud System using Laravel 5</h3>
     </div> <!-- end container -->
 </div> <!-- end jumbotron -->
 
 <div class="container">
 
-    {{ Session::get('message') }}
-    <table class="table table-striped">
-        <!--available -- table class =    .table-striped, .table-bordered, .table-hover, .table-condensed-->
-        <!--available -- contextual tr class = active, success, warning, danger, info-->
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>email</th>
-            <th>Action</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($students as $student)
-            <tr>
-                <th scope="row">{{ $student->id }}</th>
-                <td>{{ $student->first_name }}</td>
-                <td>{{ $student->last_name }}</td>
-                <td>{{ $student->email }}</td>
-                <td><a href="{{URL::to('/edit/'.$student->id)}}">Edit</a> ! <a onclick="return check()" href="{{URL::to('/delete/'.$student->id)}}">Delete</a></td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
+    {!! Form::open(array('url' => 'update-student')) !!}
+    <div class="form-group">
+        <label for="first_name">First Name</label>
+         <input type="text" name="first_name" class="form-control" id="first_name" value="{{ $student->first_name }}">
+         <input type="hidden" name="id" class="form-control" id="first_name" value="{{ $student->id }}">
+    </div>
+    <div class="form-group">
+        <label for="last_name">last Name</label>
+        <input type="text" name="last_name" class="form-control" id="last_name" value="{{ $student->last_name }}">
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" name="email" class="form-control" id="email" value="{{ $student->email }}">
+    </div>
+
+    <div class="form-group">
+        <label for="address">Address</label>
+        <textarea class="form-control" name="address" id="" cols="30" rows="10">{{ $student->address }}</textarea>
+    </div>
+
+    <button type="submit" name="" class="btn btn-default">Submit</button>
+
+    {!!  Form::close() !!}
 </div>
 
 

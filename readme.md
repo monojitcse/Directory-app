@@ -1,4 +1,6 @@
-##Directory is a Laravel blogroll Application.
+#Directory
+ 
+ Directory is a Laravel blogroll Application.
 
 
 
